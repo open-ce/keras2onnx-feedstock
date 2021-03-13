@@ -1,5 +1,5 @@
 {% set name = "keras2onnx" %}
-{% set version = "1.6.1" %}
+{% set version = "1.6.5" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/onnx/keras-onnx/archive/v{{ version }}.tar.gz
-  sha256: 22f01ed87e251efc00835bb8120fa236d84c61361d2ffc0412f3b04f8894841b
+  sha256: a8cab4b7733b306f539d0bbf637fbb43aec67b6fd2c74887afe189749ce1b673
 
 build:
   number: 0
@@ -25,7 +25,7 @@ requirements:
     - protobuf
     - requests
     - onnx
-    - onnxconverter-common >=1.6,<1.7
+    - onnxconverter-common >=1.6.5
     - fire
     - tensorflow
 
