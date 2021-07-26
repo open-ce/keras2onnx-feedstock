@@ -1,7 +1,0 @@
-recipes:
-  - name : keras2onnx
-    path : recipe
-
-channels:
-  - defaults
-  - conda-forge
