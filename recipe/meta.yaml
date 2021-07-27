@@ -11,31 +11,28 @@ source:
   sha256: 8ec9c4e1c1f870d420934d1aa7cbc9faab80c6af366900bf95e5f48280c0d199
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
+  string: py_pb{{ protobuf | replace(".*", "")}}_{{ PKG_BUILDNUM }}
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python
   run:
-    - python >=3.6
-    - numpy
-    - protobuf
-    - requests
-    - onnx
-    - onnxconverter-common >=1.8.0
+    - python
+    - numpy {{ numpy }}
+    - protobuf {{ protobuf }}
+    - requests {{ requests }}
+    - onnx {{ onnx }}
+    - onnxconverter-common {{ onnxconverter_common }}
     - fire
-    - tensorflow
+    - tensorflow-base {{ tensorflow }}
 
 test:
   imports:
     - keras2onnx
-  commands:
-    - pip check
-  requires:
-    - pip
 
 about:
   home: https://github.com/onnx/keras-onnx
@@ -45,4 +42,4 @@ about:
 
 extra:
   recipe-maintainers:
-    - xhochy
+    - open-ce/open-ce-dev-team
